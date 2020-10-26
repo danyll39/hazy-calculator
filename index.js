@@ -1,10 +1,10 @@
-const operators = ['+', '-', '*', '/']
+const operatorsList = ['+', '-', '*', '/']
 
 const isStringNumberOrIsANumber = (calcSteps) => {
   return !isNaN(calcSteps) && calcSteps !== ''
 }
-const isOperand = (calcSteps) => {
-  return operators.includes(calcSteps)
+const isOperator = (calcSteps) => {
+  return operatorsList.includes(calcSteps)
 }
 const calculateUpdatedArray = ([num1, operators, num2]) => {
   switch (operators) {
@@ -26,7 +26,7 @@ const calculate = (calcSteps) => {
   for (let i = 0; i < calcSteps.length; i++) {
     if (isStringNumberOrIsANumber(calcSteps[i])) {
       newString.push(Number(calcSteps[i]))
-    } else if (isOperand(calcSteps[i])) {
+    } else if (isOperator(calcSteps[i])) {
       newString.push(calcSteps[i])
     }
   }
